@@ -1,0 +1,17 @@
+{
+  "name": "folio",
+  "version": "1.0.0",
+  "description": "Personal Portfolio Website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack js/app.js dist/bundle.js",
+    "build:prod": "webpack ./js/app.js ./dist/bundle.js -p"
+  },
+  "author": "Bayley Mauger",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.9.7"
+  }
+}
