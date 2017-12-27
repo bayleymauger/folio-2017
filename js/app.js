@@ -113,10 +113,12 @@ function projectLoad(name, animation) {
   if(animation === 'top') {
     $('html, body').css('overflow', 'hidden');
     $('.works-page').hide();
+    $('.nav').hide();
     $('.loader-2').fadeIn();
     $('.page-loader').load(`projects/${name}.html`, function() {
       document.location.hash = name;
       labAnimation();
+      $('.nav').show();
       // Customizing a reveal set
       $('.loader-2').hide();
       setTimeout(() => {
@@ -132,6 +134,7 @@ function projectLoad(name, animation) {
       }, 1000);
     });
   } else if (animation === 'bottom') {
+    $('.nav').hide();
     $('html, body').animate({scrollTop : 0},500);
     $('html, body').css('overflow', 'hidden');
     setTimeout(() => {
@@ -141,6 +144,7 @@ function projectLoad(name, animation) {
         $('.page-loader').load(`projects/${name}.html`, function() {
           document.location.hash = name;
           labAnimation();
+          $('.nav').show();
           $('.loader-2').hide();
           setTimeout(() => {
             $('.page-loader').css('display', 'initial');
